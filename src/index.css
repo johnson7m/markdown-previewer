@@ -1,31 +1,121 @@
+/* General Styling */
 body {
-  margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: black;
 }
 
 .appWrapper {
   text-align: center;
-  margin: auto;
+  padding: 20px;
+}
+
+.editor-wrapper,
+.preview-wrapper {
+  margin-top: 20px;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+textarea {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 #preview {
-  margin: auto;
-  padding: 1rem;
-  text-align: left;
-  background-color: White;
-  border: 1px solid black;
+  min-height: 400px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
 }
 
-img {
-width: 400px;
-height: 50px;
+
+/* Styling for rendered Markdown */
+#preview h1, #preview h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#preview pre {
+  background-color: #282c34; /* Darker background for code block */
+  color: #f8f8f2; /* Light text color */
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+  white-space: pre-wrap; /* Wrap long lines within the code block */
+}
+
+#preview code {
+  background-color: #f1f1f1; /* Light gray background for inline code */
+  color: #d63384; /* Distinct color for code text */
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+#preview pre code {
+  background-color: transparent; /* Avoid double background color for block code */
+  padding: 0; /* Remove padding to align with block code background */
+}
+
+#preview blockquote {
+  border-left: 5px solid #ccc;
+  padding-left: 10px;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 1.5rem; /* Adjust font sizes for smaller screens */
+  }
+
+  textarea {
+    height: 250px; /* Reduce editor height */
+    font-size: 0.9rem; /* Reduce font size */
+  }
+
+  #preview {
+    min-height: 250px; /* Reduce preview height */
+  }
+
+  .editor-wrapper,
+  .preview-wrapper {
+    margin-top: 15px;
+  }
+
+  .appWrapper {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 1.2rem; /* Further adjust font sizes for very small screens */
+  }
+
+  textarea {
+    height: 200px; /* Further reduce editor height */
+    font-size: 0.8rem; /* Further reduce font size */
+  }
+
+  #preview {
+    min-height: 200px; /* Further reduce preview height */
+  }
+
+  .editor-wrapper,
+  .preview-wrapper {
+    margin-top: 10px;
+  }
+
+  .appWrapper {
+    padding: 5px; /* Further reduce padding for very small screens */
+  }
 }
