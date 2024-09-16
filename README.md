@@ -1,3 +1,11 @@
+# Markdown Previewer v.2 Update
+Overhauling app design to more mobile friendly.
+Part of overhaul for portfolio. 
+
+1.) added stack view/ side by side
+2.) some style changes for previewer - looks a little better.
+
+
 # markdown-previewer
 markdown-previewer
 
